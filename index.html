@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Altaf Hussain</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center text-success mb-4">Login Form</h1>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 bg-light p-4 rounded shadow-sm">
+         
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="nameInput" class="form-control" placeholder="Enter your name here" required>
+          </div>
+
+          
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="emailInput" class="form-control" placeholder="Enter your email here" required>
+          </div>
+
+         
+          <div class="form-group">
+            <label>Phone No.</label>
+            <input type="tel" id="phoneInput" class="form-control" placeholder="Enter your number here" required>
+          </div>
+
+        
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="msgInput" class="form-control" rows="3" placeholder="Enter your message here"></textarea>
+          </div>
+
+         
+          <div class="form-group">
+            <label>Upload File</label>
+            <input type="file" id="fileInput" class="form-control">
+          </div>
+
+        
+          <button type="button" onclick="showData()" class="btn btn-outline-success form-control">Submit</button>
+        </div>
+      </div>
+
+      
+      <div class="jumbotron my-4">
+        <h4 class="text-center text-dark">Submit Data</h4>
+        <hr>
+        <p id="output1"></p>
+        <p id="output2"></p>
+        <p id="output3"></p>
+        <p id="output4"></p>
+        <p id="output5"></p>
+      </div>
+    </div>
+
+    <script>
+      function showData() {
+        let name = document.getElementById("nameInput").value;
+        let email = document.getElementById("emailInput").value;
+        let phone = document.getElementById("phoneInput").value;
+        let message = document.getElementById("msgInput").value;
+        let fileInput = document.getElementById("fileInput");
+        let fileName = fileInput.value ? fileInput.value.split("\\").pop() : "No file selected";
+
+        document.getElementById("output1").innerHTML = "Name: " + name;
+        document.getElementById("output2").innerHTML = "Email: " + email;
+        document.getElementById("output3").innerHTML = "Phone No: " + phone;
+        document.getElementById("output4").innerHTML = "Message: " + message;
+        document.getElementById("output5").innerHTML = "Uploaded File: " + fileName;
+      }
+    </script>
+    
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
